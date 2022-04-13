@@ -1,0 +1,159 @@
+span{
+    display: inline-block;
+    font-size: smaller;
+    font-weight: bold;
+}
+.calendars{
+    box-sizing: border-box;
+    color: rgb(68, 68, 68);
+    display :block;
+    font-family: "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    position: relative;
+    text-size-adjust: 100%;
+    width: 500px;
+    position: relative;
+    left: 50px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.calendars_tabWrap{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: rgba(233, 219, 193, 0.514);
+}
+.prev{
+    width: 10%;
+    background-image: url(/src/components/Image/left_arrow_icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.next{
+    width: 10%;
+    background-image: url(/src/components/Image/right_arrow_icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.ntb_tab{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+    padding-top: 15px;
+    width: 80%;
+    flex-direction: row;
+    margin-top: 0px;
+}
+.otherMonthDay{
+    visibility: hidden;
+}
+
+.tab>a{
+    text-decoration: none;
+    padding: 15px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.month_table {
+    display: flex;
+    flex-direction: column;
+}
+.week{
+    width: 100%;
+    display: flex;
+}
+.table_width{
+    display: flex;
+}
+.table_width > th{
+    width: 72px;
+    border: 1px solid rgba(228, 222, 222, 0.507);
+    color: rgb(126, 124, 122);
+    font-weight: bolder;
+}
+
+.table_width > td{
+    padding: 0px;
+    min-width: 65.5px;
+    width: 72px;
+    height: 110px;
+    border: 1px solid rgba(228, 222, 222, 0.507);
+}
+
+.price{
+    color: red;
+}
+.dayNum{
+    min-width: 20px;
+    text-align: center;
+}
+.onschedule{
+    position: relative;
+    left: 20px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    color: white;
+    background-color: orange;
+    font-weight: bolder;
+    padding: 3px;
+}
+.nonschedule{
+    display: none;
+}
+
+
+
+/* 狀態改變 */
+
+.now{
+    background-color: white;
+}
+.more{
+    color: rgb(40, 119, 192);
+}
+.close{
+    color: rgba(128, 128, 128, 0.644);
+}
+.alternate{
+    color: rgb(56, 161, 117);
+}
+.none{
+    color: rgb(25, 95, 29);
+}
+.tab>a:hover{
+    background-color: aliceblue;
+}
+.tab>a:active{
+    color: brown;
+}
+td:hover{
+    background-color: beige;
+}
+.active{
+    border: 1px solid yellow;
+}
+.chooseMonth{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.otherMonth{
+    display: none;
+}
+.border{
+    border: 2px solid rgb(97, 185, 97) !important;
+    background-color: beige;
+}
+.click{
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+}
