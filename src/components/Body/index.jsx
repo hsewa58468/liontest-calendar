@@ -22,13 +22,13 @@ export default function Body_Day() {
                             if(targetIndex<otherMonthDay || targetIndex>overMonthDay ){
                                 return(
                                     <td key={targetIndex} className="day otherMonthDay">
-                                        <div className='dayCount'></div>
+                                        <span className='dayCount'></span>
                                     </td>
                             )}
                             else{   
                                 return(
                                     <td key={targetIndex} className='day currentDays'>
-                                        <div className='dayCount'>{targetIndex-otherMonthDay+1}</div>
+                                        <span className='dayCount'>{targetIndex-otherMonthDay+1}</span>
                                         <Data/>
                                     </td>
                                 )
