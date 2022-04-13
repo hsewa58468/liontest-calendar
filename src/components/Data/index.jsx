@@ -1,12 +1,15 @@
-import React from 'react'
+// import React, { useState,useEffect,Fragment } from 'react';
 import './index.css'
-import data1 from '../example/json/data1.json'
-const {useState}=React
-var moment = require('moment');
+// import data1 from '../Body/json/data1.json'
+// const {useState}=React
+// var moment = require('moment');
 
-export default function index() {
+export default function index(props) {
+
+
+
   return (
       
-    <div></div>
+    <div><h1>123123</h1></div>
   )
 }
