@@ -3,6 +3,7 @@ import React ,{useState} from "react"
 
 import { Link,Route,Routes } from 'react-router-dom';
 import './index.css';
+import Data from '../Data/index'
 
 
 
@@ -44,12 +45,7 @@ export default function Month_Bar(){
             </li>                                                
             </ul>
             <Link to={ChooseMonth === "/sieben"?"/acht": ChooseMonth === "/acht"?"/neun":"/neun"} onClick={handlenext} className="next on"></Link>
-
-            <Routes>
-                <Route path="/sieben"/>
-                <Route path="/acht" />
-                <Route path="/neun" />
-            </Routes>
+            
         </div>
     )
 }
