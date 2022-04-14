@@ -41,7 +41,7 @@ export default function Month_Bar(){
                 <Link to="/acht"><span onClick={()=>{setChooseMonth("/acht")}}>2017 8月</span></Link>
             </li>
             <li className="tab">
-                <Link to="/neun"><span onClick={()=>{setChooseMonth("/acht")}}>2017 9月</span></Link>
+                <Link to="/neun"><span onClick={()=>{setChooseMonth("/neun")}}>2017 9月</span></Link>
             </li>                                                
             </ul>
             <Link to={ChooseMonth === "/sieben"?"/acht": ChooseMonth === "/acht"?"/neun":"/neun"} onClick={handlenext} className="next on"></Link>
