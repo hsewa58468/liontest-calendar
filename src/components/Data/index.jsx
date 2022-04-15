@@ -1,15 +1,37 @@
-// import React, { useState,useEffect,Fragment } from 'react';
+import React from 'react';
 import './index.css'
-// import data1 from '../Body/json/data1.json'
-// const {useState}=React
-// var moment = require('moment');
+import EveryWeek from './EveryWeek';
 
-export default function index(props) {
-
-
-
-  return (
-      
-    <div><h1>123123</h1></div>
-  )
+ let calendarDates =  [
+  [{},{},{},{},{},{},{}],
+  [{},{},{},{},{},{},{}],
+  [{},{},{},{},{},{},{}],
+  [{},{},{},{},{},{},{}],
+  [{},{},{},{},{},{},{}],
+  [{},{},{},{},{},{},{}]
+]
+export default function Data(props) {
+   
+  
+    const returnDatesJSX = (year,month)=>{
+        
+        const dates = calendarDates.map((weekArray,weekIndex)=>{  
+            return (
+                <tr key={weekIndex} className={` days table_width ${props.chooseMonth===month? 'chooseMonth' : 'otherMonth'}`} >
+                    {
+                        <EveryWeek weekArray={weekArray} weekIndex={weekIndex} year={year} month={month}/>
+                    }
+                </tr>
+            )
+        })
+        return dates
+    }
+    return (
+        <table>
+            <tbody>
+                { returnDatesJSX(2017,props.chooseMonth)}
+            </tbody>
+        </table>    
+    )
 }
+

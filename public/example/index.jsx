@@ -43,7 +43,7 @@ export default function Hook_index (){
             return (
                 <tr className={` days table_width ${which_Month_Has_choose===month? 'chooseMonth' : 'otherMonth'}`} >
                     {
-                        weekArray.map((day,dayIndex)=>{           //第二層map-->每日
+                        weekArray.map((_,dayIndex)=>{           //第二層map-->每日
                             const targetIndex = weekIndex*7 + dayIndex //設定每格標記key
                             if(targetIndex<otherMonthDay || targetIndex>overMonthDay ){
                                 return(
@@ -55,7 +55,7 @@ export default function Hook_index (){
                                 const newdata=data1.filter(function(item){//return {data1中符合日期的資料}
                                     return item.date === moment([year,month-1,targetIndex-otherMonthDay+1]).format("YYYY/MM/DD");    
                                 }) 
-                                if(newdata[0]==undefined){ //沒資料-->僅輸出日期
+                                if(newdata[0]===undefined){ //沒資料-->僅輸出日期
                                     return(
                                         <td key={targetIndex} className='currentDays'>
                                             <div className='day'>{targetIndex-otherMonthDay+1}</div>
@@ -96,19 +96,19 @@ export default function Hook_index (){
     return (
         <div className="calendars"> 
             <div className="calendars_tabWrap">
-                <a href="#" className="prev" onClick={()=>BackArrowMonth()}></a>
+                <a href="###" className="prev" onClick={()=>BackArrowMonth()}>{''}</a>
                 <ul className="ntb_tab">
                     <li className="tab">{/* 使用三元判斷式判斷是否選取該月份-->onclick事件送出點擊月份給state */}
-                        <a href="#" className={` ${which_Month_Has_choose===5? 'click' : ''}`} onClick={()=>ChooseMonth(5)}><span>2017 5月</span></a>
+                        <a href="###" className={` ${which_Month_Has_choose===5? 'click' : ''}`} onClick={()=>ChooseMonth(5)}><span>2017 5月</span></a>
                     </li>            
                     <li className="tab">
-                        <a href="#" className={` ${which_Month_Has_choose===6? 'click' : ''}`} onClick={()=>ChooseMonth(6)}><span>2017 6月</span></a>
+                        <a href="###" className={` ${which_Month_Has_choose===6? 'click' : ''}`} onClick={()=>ChooseMonth(6)}><span>2017 6月</span></a>
                     </li>
                     <li className="tab">
-                        <a href="#" className={` ${which_Month_Has_choose===7? 'click' : ''}`} onClick={()=>ChooseMonth(7)}><span>2017 7月</span></a>
+                        <a href="###" className={` ${which_Month_Has_choose===7? 'click' : ''}`} onClick={()=>ChooseMonth(7)}><span>2017 7月</span></a>
                     </li>                                                
                 </ul>
-                <a href="#" className="next" onClick={()=>ForwardArrowMonth()}></a>
+                <a href="###" className="next" onClick={()=>ForwardArrowMonth()}>{''}</a>
             </div>
             <div className="month">
                 <div className='main'>

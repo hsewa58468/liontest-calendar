@@ -1,0 +1,17 @@
+
+tbody{
+    width: 100px;
+}
+.chooseMonth{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.otherMonth{
+    display: none;
+}
+
+.nonschedule{
+    display: none;
+}
+
+
