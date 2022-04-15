@@ -27,8 +27,6 @@ export default function Month_Bar(){
 
             <Link to={ChooseMonth === "/neun"? "/acht": "/sieben"} onClick={handleprev} className="prev on"></Link>
             <ul className="ntb_tab">
-<<<<<<< HEAD
-=======
                 <li className="tab">
                     <Link to="/sieben"><span className={ChooseMonth==="/sieben"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/sieben")}}>2017 7月</span></Link>
                 </li>            
@@ -38,7 +36,6 @@ export default function Month_Bar(){
                 <li className="tab">
                     <Link to="/neun"><span className={ChooseMonth==="/neun"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/neun")}}>2017 9月</span></Link>
                 </li>                                                
->>>>>>> testA
             </ul>
             <Link to={ChooseMonth === "/sieben"?"/acht": "/neun"} onClick={handlenext} className="next on"></Link>
             
