@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import Data from '../Data/index'
+import Data from './Data/index'
 import { Route,Routes } from 'react-router-dom';
 
 export default function Body_Day() {

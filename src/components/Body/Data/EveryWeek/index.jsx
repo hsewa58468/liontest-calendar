@@ -1,5 +1,5 @@
 import React from "react";
-import data1 from '../../Body/json/data1.json';
+import data1 from '../../json/data1.json';
 import ActionDay from "./ActionDay";
 import './index.css'
 
