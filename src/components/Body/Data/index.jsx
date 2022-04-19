@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './index.css'
 import EveryWeek from './EveryWeek';
 
@@ -12,6 +12,7 @@ import EveryWeek from './EveryWeek';
 ]
 export default function Data(props) {
    
+    const{Choose} = props;
   
     const returnDatesJSX = (year,month)=>{
         
@@ -26,10 +27,11 @@ export default function Data(props) {
         })
         return dates
     }
+
     return (
         <table>
             <tbody>
-                { returnDatesJSX(2017,props.chooseMonth)}
+                { returnDatesJSX(Choose.year,Choose.month) }
             </tbody>
         </table>    
     )

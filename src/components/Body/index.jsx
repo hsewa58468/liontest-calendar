@@ -1,14 +1,21 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './index.css'
 import Data from './Data/index'
 import { Route,Routes } from 'react-router-dom';
+import PubSub from 'pubsub-js';
 
 export default function Body_Day() {
+    
+    const[Choose,setChoose] = useState()
+
+    useEffect(()=>{
+        PubSub.subscribe("choose",(_,data)=>{ 
+            setChoose(data); 
+        })
+    })
     return (       
         <Routes forceRefresh={true}>
-            <Route path="/sieben" element={<Data chooseMonth={7}/>}/>
-            <Route path="/acht" element={<Data chooseMonth={8}/>}/>
-            <Route path="/neun" element={<Data chooseMonth={9}/>}/>
+            <Route path={`/${Choose.year}/${Choose.month}`} element={<Data Choose={Choose}/>}/>
         </Routes>
   )
 }

@@ -1,43 +1,66 @@
-import React ,{useState} from "react"
+import React ,{useState,useEffect} from "react"
 import { Link } from 'react-router-dom';
 import './index.css';
+import PubSub from 'pubsub-js';
+
 
 export default function Month_Bar(){
 
-    const[ChooseMonth,setChooseMonth]=useState("/");
-    function handlenext(){
-        if(ChooseMonth === "/sieben"){
-            setChooseMonth("/acht");
-        }else{
-            setChooseMonth("/neun");
-        }
-    }
+    const[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
 
+    // const dat = `${data1.map(obj=>{
+    //     return obj.date
+    // })}`;
+
+    // let arr = dat.split(',');
+    // const yearsAndmonths = arr.map((obj)=>{
+    //     const crr = obj.split('/');
+    //     return `${crr[0]}/${crr[1]}`;
+    // })
+
+    function handlenext(){ 
+       setChooseMonth(ChooseMonth=>({
+           year:ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year,
+           month:ChooseMonth.month+1>12?1:ChooseMonth.month+1
+       }))
+    } 
+ 
     function handleprev(){
-        if(ChooseMonth === "/neun"){
-            setChooseMonth("/acht");
-        }else{
-            setChooseMonth("/sieben");
-        }
-    }
+
+        setChooseMonth(ChooseMonth=>({ 
+            year:ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year,
+            month:ChooseMonth.month-1<1?12:ChooseMonth.month-1
+        }))
+      
+    }  
+
+    useEffect(() => {
+        PubSub.publish("choose",ChooseMonth);
+    }, [ChooseMonth]); 
+
 
     return(
 
         <div className="calendars_tabWrap">
 
-            <Link to={ChooseMonth === "/neun"? "/acht": "/sieben"} onClick={handleprev} className="prev on"></Link>
+            <Link to={`/${ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year}/${ChooseMonth.month-1<1?12:ChooseMonth.month-1}`} onClick={()=>{handleprev()}} className="prev on"></Link>
             <ul className="ntb_tab">
+
                 <li className="tab">
-                    <Link to="/sieben"><span className={ChooseMonth==="/sieben"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/sieben")}}>2017 7月</span></Link>
-                </li>            
+                    <span className=''>{ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year} {ChooseMonth.month-1<1?12:ChooseMonth.month-1}月</span>
+                </li>&emsp; 
+
                 <li className="tab">
-                    <Link to="/acht"><span className={ChooseMonth==="/acht"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/acht")}}>2017 8月</span></Link>
+                    <span className='clickMonth'>{ChooseMonth.year} {ChooseMonth.month}月</span>
+                </li>&emsp;
+
+                <li className="tab">
+                    <span className=''>{ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year} {ChooseMonth.month+1>12?1:ChooseMonth.month+1}月</span>
                 </li>
-                <li className="tab">
-                    <Link to="/neun"><span className={ChooseMonth==="/neun"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/neun")}}>2017 9月</span></Link>
-                </li>                                                
+                                                                  
             </ul>
-            <Link to={ChooseMonth === "/sieben"?"/acht": "/neun"} onClick={handlenext} className="next on"></Link>
+
+            <Link to={`/${ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year}/${ChooseMonth.month+1>12?1:ChooseMonth.month+1}`} onClick={()=>{handlenext()}} className="next on"></Link>
             
         </div>
     )
