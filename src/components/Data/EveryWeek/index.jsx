@@ -37,7 +37,7 @@ export default function EveryWeek(props){
                         else{
                             const target=newdata[newdata.length-1]   
                             return(
-                                <ActionDay targetIndex={targetIndex} target={target} otherMonthDay={otherMonthDay}/>
+                                <ActionDay key={targetIndex} targetIndex={targetIndex} target={target} otherMonthDay={otherMonthDay}/>
                         )}
                     }
                 })
