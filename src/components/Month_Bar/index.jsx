@@ -38,15 +38,15 @@ export default function Month_Bar(){
             <ul className="ntb_tab">
 
                 <li className="tab">
-                    <span className=''>{ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year} {ChooseMonth.month-1<1?12:ChooseMonth.month-1}月</span>
+                    <Link to=""><span className=''>{ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year} {ChooseMonth.month-1<1?12:ChooseMonth.month-1}月</span></Link>
                 </li>&emsp; 
 
                 <li className="tab">
-                    <span className='clickMonth'>{ChooseMonth.year} {ChooseMonth.month}月</span>
+                    <Link to=""><span className='clickMonth'>{ChooseMonth.year} {ChooseMonth.month}月</span></Link>
                 </li>&emsp;
 
                 <li className="tab">
-                    <span className=''>{ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year} {ChooseMonth.month+1>12?1:ChooseMonth.month+1}月</span>
+                <Link to=""><span className=''>{ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year} {ChooseMonth.month+1>12?1:ChooseMonth.month+1}月</span></Link>
                 </li>
                                                                   
             </ul>
