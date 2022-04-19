@@ -1,0 +1,20 @@
+.price{
+    color: red;
+    font-size: small;
+}
+.Daytitle{
+    display: flex;
+    justify-content: space-between
+}
+.details{
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    font-size: small;
+}
+.onschedule{
+    background-color: rgb(243, 177, 53);
+    color: white;
+    font-weight: bolder;
+    padding: 2px;
+    font-size: small;
+}

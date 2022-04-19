@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-const {useState}=React
+
 export default function Week() {
     return (
     <div className='weekTable'>
