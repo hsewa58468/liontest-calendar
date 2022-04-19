@@ -27,7 +27,7 @@
     list-style: none;
     padding: 0px;
     padding-top: 15px;
-    width: 80%;
+    width: 100%;
     flex-direction: row;
     margin-top: 0px;
 }
@@ -47,7 +47,7 @@
     border-radius: 5px;
 }
 
-.clickMonth{
+.click{
     background-color: rgb(251, 253, 253);
     color: red;
 }
@@ -55,3 +55,4 @@
 a>span:hover{
     background-color: rgb(251, 253, 253);
 }
+

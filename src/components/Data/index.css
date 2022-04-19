@@ -1,17 +1,64 @@
-
-tbody{
-    width: 100px;
+.days{
+    display: flex;
 }
 .chooseMonth{
     display: flex;
-    flex-wrap: nowrap;
+
 }
 .otherMonth{
     display: none;
 }
 
+td{
+    min-width: 76px;
+    height: 110px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+tbody{
+    width: 100px;
+}
+
+.price{
+    color: red;
+    font-size: medium;
+}
+.Daytitle{
+    display: flex;
+    justify-content: space-between
+}
+.details{
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    font-size: small;
+}
+.onschedule{
+    background-color: rgb(243, 177, 53);
+    color: white;
+    font-weight: bolder;
+    padding: 2px;
+    font-size: small;
+}
 .nonschedule{
     display: none;
 }
-
-
+.clickDay{
+    border: 2px solid rgb(129, 221, 75)!important;
+    background-color: rgba(236, 215, 157, 0.418);
+}
+.weekDay{
+    width: 100%;
+}
+.day{
+    height: 100px;
+    padding: 5px;
+    width: 55px;
+}
+.currentDays{
+    border: 1px solid beige;
+}
+.Monthdisplay{
+    display: flex;
+}
+.Monthnone{
+    display: none;
+}

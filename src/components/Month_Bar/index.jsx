@@ -1,44 +1,48 @@
 import React ,{useState} from "react"
-import { Link } from 'react-router-dom';
 import './index.css';
 
-export default function Month_Bar(){
+export default function Month_Bar(props){
+    const {getCurrent}=props
+    const[which_Month_Has_choose,set_which_Month_Has_choose]=useState(5)
+    const[which_Year_Has_choose,set_which_Year_Has_choose]=useState(2017) //month選擇state(預設為5月)
 
-    const[ChooseMonth,setChooseMonth]=useState("/");
-    function handlenext(){
-        if(ChooseMonth === "/sieben"){
-            setChooseMonth("/acht");
+    const BackArrowMonth =(monthminus) =>{  //minus
+        if(monthminus===0){
+            set_which_Year_Has_choose(which_Year_Has_choose-1)
+            set_which_Month_Has_choose(monthminus=12)
+            getCurrent(which_Year_Has_choose-1,monthminus)
         }else{
-            setChooseMonth("/neun");
+            set_which_Month_Has_choose(monthminus)
+            getCurrent(which_Year_Has_choose,monthminus)
         }
     }
-
-    function handleprev(){
-        if(ChooseMonth === "/neun"){
-            setChooseMonth("/acht");
+    const ForwardArrowMonth =(monthplus) =>{    //plus
+        if(monthplus===13){
+            set_which_Year_Has_choose(which_Year_Has_choose+1)
+            set_which_Month_Has_choose(monthplus=1)
+            getCurrent(which_Year_Has_choose+1,monthplus)
         }else{
-            setChooseMonth("/sieben");
+            set_which_Month_Has_choose(monthplus)
+            getCurrent(which_Year_Has_choose,monthplus)
         }
     }
-
+    console.log("monthBar",which_Year_Has_choose,which_Month_Has_choose);
     return(
 
         <div className="calendars_tabWrap">
-
-            <Link to={ChooseMonth === "/neun"? "/acht": "/sieben"} onClick={handleprev} className="prev on"></Link>
-            <ul className="ntb_tab">
+            <a href="#" className="prev" onClick={()=>BackArrowMonth(which_Month_Has_choose-1)}>{''}</a>
+            <ul className='ntb_tab'>
                 <li className="tab">
-                    <Link to="/sieben"><span className={ChooseMonth==="/sieben"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/sieben")}}>2017 7月</span></Link>
+                    <a href="#" onClick={()=>BackArrowMonth(which_Month_Has_choose-1)}><span >{`${which_Month_Has_choose-1===0?which_Year_Has_choose-1:which_Year_Has_choose}`} {`${which_Month_Has_choose-1===0?12:which_Month_Has_choose-1}`}月</span></a>
                 </li>            
                 <li className="tab">
-                    <Link to="/acht"><span className={ChooseMonth==="/acht"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/acht")}}>2017 8月</span></Link>
+                    <a href="#"><span className={` ${which_Month_Has_choose===which_Month_Has_choose && which_Year_Has_choose===which_Year_Has_choose? 'click' : ''}`}>{which_Year_Has_choose} {which_Month_Has_choose}月</span></a>
                 </li>
                 <li className="tab">
-                    <Link to="/neun"><span className={ChooseMonth==="/neun"? 'clickMonth' : ''} onClick={()=>{setChooseMonth("/neun")}}>2017 9月</span></Link>
-                </li>                                                
+                    <a href="#" onClick={()=>ForwardArrowMonth(which_Month_Has_choose+1)}><span>{`${which_Month_Has_choose+1===13?which_Year_Has_choose+1:which_Year_Has_choose}`} {`${which_Month_Has_choose+1===13?1:which_Month_Has_choose+1}`}月</span></a>
+                </li>                                              
             </ul>
-            <Link to={ChooseMonth === "/sieben"?"/acht": "/neun"} onClick={handlenext} className="next on"></Link>
-            
+            <a href="#" className="next" onClick={()=>ForwardArrowMonth(which_Month_Has_choose+1)}>{''}</a>
         </div>
     )
 }

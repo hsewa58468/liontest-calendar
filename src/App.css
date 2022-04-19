@@ -43,4 +43,9 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
   }
-  
+  .displaymonth{
+    display: block;
+  }
+  .nonemonth{
+    display: none;
+  }
