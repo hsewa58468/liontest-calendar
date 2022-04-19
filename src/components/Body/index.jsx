@@ -6,7 +6,7 @@ import PubSub from 'pubsub-js';
 
 export default function Body_Day() {
     
-    const[Choose,setChoose] = useState()
+    const[Choose,setChoose] = useState({year:2017,month:7});
 
     useEffect(()=>{
         PubSub.subscribe("choose",(_,data)=>{ 

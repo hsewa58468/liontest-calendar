@@ -18,7 +18,7 @@ export default function Data(props) {
         
         const dates = calendarDates.map((weekArray,weekIndex)=>{  
             return (
-                <tr key={weekIndex} className={` days table_width ${props.chooseMonth===month? 'chooseMonth' : 'otherMonth'}`} >
+                <tr key={weekIndex} className='chooseMonth' >
                     {
                         <EveryWeek weekArray={weekArray} weekIndex={weekIndex} year={year} month={month}/>
                     }

@@ -8,15 +8,6 @@ export default function Month_Bar(){
 
     const[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
 
-    // const dat = `${data1.map(obj=>{
-    //     return obj.date
-    // })}`;
-
-    // let arr = dat.split(',');
-    // const yearsAndmonths = arr.map((obj)=>{
-    //     const crr = obj.split('/');
-    //     return `${crr[0]}/${crr[1]}`;
-    // })
 
     function handlenext(){ 
        setChooseMonth(ChooseMonth=>({
