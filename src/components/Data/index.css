@@ -1,18 +1,63 @@
+.open_others {
+    position: fixed;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #00000080;
+    padding: 10% 10% 0 10%;
+}
+
+.otheraday{
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    font-size: smaller;
+}
+
+.close_others {
+    display: none;
+}
+
+.watchmore{
+    color: rgb(56, 95, 82);
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 .days{
-    display: flex;
+    padding: 0px;
+    height: 110px;
+    min-width: 78px;
+    border: 1px solid beige;
+}
+.otherdays{
+    padding: 0px;
+    height: 110px;
+    min-width: 78px;
+    border: 1px solid rgba(245, 245, 220, 0);
 }
 .chooseMonth{
     display: flex;
-
 }
 .otherMonth{
     display: none;
 }
 
-td{
-    min-width: 76px;
-    height: 110px;
-    border: 1px solid rgba(255, 255, 255, 0);
+tr{
+    display: flex;
+}
+
+th{
+    text-align: left;
 }
 tbody{
     width: 100px;
@@ -42,19 +87,19 @@ tbody{
     display: none;
 }
 .clickDay{
-    border: 2px solid rgb(129, 221, 75)!important;
+    border: 1px solid rgb(129, 221, 75);
     background-color: rgba(236, 215, 157, 0.418);
+    height: 106px;
+    width: 72px;
 }
 .weekDay{
     width: 100%;
 }
-.day{
-    height: 100px;
-    padding: 5px;
-    width: 55px;
-}
+
 .currentDays{
-    border: 1px solid beige;
+    background-color: white;
+    height: 106px;
+    width: 72px;
 }
 .Monthdisplay{
     display: flex;
