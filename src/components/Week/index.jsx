@@ -1,21 +1,25 @@
 import React from 'react'
 import './index.css'
+import Weekitem from './Weekitem'
+let weekDates =  [
+    {},{},{},{},{},{},{}
+  ]
 export default function Week() {
+    const returnDatesJSX = ()=>{
+        const dates = weekDates.map((weekArray,weekIndex)=>{  
+            return (                    
+                <Weekitem key={weekIndex} weekIndex={weekIndex}/>
+            )
+        })
+        return dates
+    }
     return (
-    <div className='weekTable'>
-        <table className='month_table'>
-            <thead>
-                <tr className='week table_width'>
-                    <th>星期日</th>
-                    <th>星期一</th>
-                    <th>星期二</th>
-                    <th>星期三</th>
-                    <th>星期四</th>
-                    <th>星期五</th>
-                    <th>星期六</th>
+        <table>
+            <tbody>
+                <tr className='weekTable' >
+                    { returnDatesJSX()}
                 </tr>
-            </thead>
-        </table>
-    </div>
-  )
+            </tbody>
+        </table>    
+    )
 }

@@ -1,18 +1,28 @@
 .days{
-    display: flex;
+    padding: 0px;
+    height: 110px;
+    min-width: 78px;
+    border: 1px solid beige;
+}
+.otherdays{
+    padding: 0px;
+    height: 110px;
+    min-width: 78px;
+    border: 1px solid rgba(245, 245, 220, 0);
 }
 .chooseMonth{
     display: flex;
-
 }
 .otherMonth{
     display: none;
 }
 
-td{
-    min-width: 76px;
-    height: 110px;
-    border: 1px solid rgba(255, 255, 255, 0);
+tr{
+    display: flex;
+}
+
+th{
+    text-align: left;
 }
 tbody{
     width: 100px;
@@ -42,19 +52,18 @@ tbody{
     display: none;
 }
 .clickDay{
-    border: 2px solid rgb(129, 221, 75)!important;
+    border: 1px solid rgb(129, 221, 75);
     background-color: rgba(236, 215, 157, 0.418);
+    height: 106px;
+    width: 72px;
 }
 .weekDay{
     width: 100%;
 }
-.day{
-    height: 100px;
-    padding: 5px;
-    width: 55px;
-}
+
 .currentDays{
-    border: 1px solid beige;
+    height: 106px;
+    width: 72px;
 }
 .Monthdisplay{
     display: flex;
