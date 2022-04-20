@@ -7,7 +7,6 @@ import PubSub from 'pubsub-js';
 export default function Month_Bar(){
 
     const[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
-    const[tabMonth,settabMonth] = useState(1);
 
     function handlenext(){ 
        setChooseMonth(ChooseMonth=>({
