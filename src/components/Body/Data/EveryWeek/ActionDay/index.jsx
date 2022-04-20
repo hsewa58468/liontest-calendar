@@ -1,21 +1,13 @@
-import React,{useState} from "react";
+
 import './index.css'
 
 export default function ActionDay(props){
 
-    const{targetIndex,target,otherMonthDay} = props;
-    const[Choose,setChoose] = useState(false);
+    const{targetIndex,target,otherMonthDay,handleborder,HasBorder} = props;
 
-    function handleChoose(){
-        if(Choose){
-            setChoose(false);
-        }else{
-            setChoose(true);
-        }
-    }
 
     return(
-        <td key={targetIndex} onClick={()=>handleChoose()} style={{border:Choose?"2px #009100 solid":""}}>
+        <td key={targetIndex} onClick={()=>handleborder(targetIndex)} style={{border:HasBorder===targetIndex?"2px #009100 solid":""}}>
             <div className='Daytitle'>
                 <span className='dayNum'>{targetIndex-otherMonthDay+1}</span>
                 <span className={`${target.availableVancancy>target.totalVacnacy?'nonschedule':'onschedule'}`}>成團</span>

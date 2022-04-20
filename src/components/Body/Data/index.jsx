@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './index.css'
 import EveryWeek from './EveryWeek';
 
@@ -13,6 +13,11 @@ import EveryWeek from './EveryWeek';
 export default function Data(props) {
    
     const{Choose} = props;
+    const [HasBorder,setHasBorder] = useState(0);
+
+    function handleborder(set){
+        setHasBorder(set);
+    }
   
     const returnDatesJSX = (year,month)=>{
         
@@ -20,7 +25,7 @@ export default function Data(props) {
             return (
                 <tr key={weekIndex} className='chooseMonth' >
                     {
-                        <EveryWeek weekArray={weekArray} weekIndex={weekIndex} year={year} month={month}/>
+                        <EveryWeek weekArray={weekArray} weekIndex={weekIndex} year={year} month={month} handleborder={handleborder} HasBorder={HasBorder}/>
                     }
                 </tr>
             )

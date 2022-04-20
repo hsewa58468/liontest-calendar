@@ -51,3 +51,15 @@
     background-color: rgb(251, 253, 253);
     color: red;
 }
+
+.nonGo{
+    color: green;
+    font-size: 5px;
+    text-align: center;
+    margin-left: 9px;
+    
+}
+
+.Go{
+    opacity: 0;
+}

@@ -8,7 +8,9 @@ export default function Month_Bar(){
 
     const[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
 
-    function handlenext(){ 
+    const[nonGo,setnonGo] = useState(true);
+
+    function handlenext(){  
        setChooseMonth(ChooseMonth=>({
            year:ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year,
            month:ChooseMonth.month+1>12?1:ChooseMonth.month+1
@@ -17,15 +19,17 @@ export default function Month_Bar(){
  
     function handleprev(){
 
-        setChooseMonth(ChooseMonth=>({ 
+        setChooseMonth(ChooseMonth=>({  
             year:ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year,
-            month:ChooseMonth.month-1<1?12:ChooseMonth.month-1
+            month:ChooseMonth.month-1<1?12:ChooseMonth.month-1 
         }))
-      
     }  
 
     useEffect(() => {
         PubSub.publish("choose",ChooseMonth);
+        PubSub.subscribe("nonGo",(_,data)=>{
+            setnonGo(data);
+        })
     }, [ChooseMonth]); 
 
 
@@ -46,7 +50,8 @@ export default function Month_Bar(){
                     <Link to={`/${ChooseMonth.year}/${ChooseMonth.month}`}><span className='clickMonth' onClick={()=>{setChooseMonth(ChooseMonth=>({
                             year:ChooseMonth.year,
                             month:ChooseMonth.month
-                        }))}}>{ChooseMonth.year} {ChooseMonth.month}月</span>
+                        }))}}>{ChooseMonth.year} {ChooseMonth.month}月</span><br/>
+                        <span className={nonGo?"nonGo":"Go"}>無出發日</span>
                     </Link>
                 </li>
 
