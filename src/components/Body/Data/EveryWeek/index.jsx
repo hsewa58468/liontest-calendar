@@ -1,9 +1,11 @@
 
-import React,{useEffect} from "react";
+import React from "react";
 import data1 from '../../json/data1.json';
 import './index.css'
+import ActionDay from './ActionDay/index'
 import PubSub from 'pubsub-js'
-// PubSub.publish("nonGo",false)
+
+
 
 var moment = require('moment');
 
@@ -19,7 +21,8 @@ export default function EveryWeek(props){
         <>  
             {
                 
-                weekArray.map((_,dayIndex)=>{           
+                weekArray.map((_,dayIndex)=>{       
+                    PubSub.publish("nonGo",true)
                     const targetIndex = weekIndex*7 + dayIndex 
                     if(targetIndex<otherMonthDay || targetIndex>overMonthDay+otherMonthDay-1 ){
                         return(
@@ -28,6 +31,7 @@ export default function EveryWeek(props){
                             </td>
                     )}
                     else{   
+                        
                         data1.forEach((obj)=>{
                             if(obj.availableVancancy === undefined){
                                 obj.guaranteed=obj['certain'];
@@ -53,25 +57,7 @@ export default function EveryWeek(props){
                             const target=newdata[newdata.length-1];   
                             return(
                                
-                                <td key={targetIndex} onClick={()=>handleborder(targetIndex)} style={{border:HasBorder===targetIndex?"2px #009100 solid":""}}>
-                                    <div className='Daytitle' >
-                                        <span className='dayNum'>{targetIndex-otherMonthDay+1}</span>
-                                        <span className={`${target.availableVancancy>target.totalVacnacy?'nonschedule':'onschedule'}`}>成團</span>
-                                    </div>                                           
-                                    <div className='details'>
-                                        <span className='status'>{target.status}</span>
-                                        <br />
-                                        <span className='sell'>餘位:
-                                            <i className='js_sell'>{target.availableVancancy}</i>
-                                        </span>
-                                        <br />
-                                        <span className='group'>團位:
-                                            <i className='js_group'>{target.totalVacnacy}</i>
-                                        </span>
-                                        <br />
-                                        <span className='price'>$ {target.price}</span>
-                                    </div>
-                                </td>
+                                <ActionDay key={targetIndex} target={target} targetIndex={targetIndex} otherMonthDay={otherMonthDay} handleborder={handleborder} HasBorder={HasBorder}/>
                         )}
                     }
                 })

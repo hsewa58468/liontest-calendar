@@ -1,14 +1,16 @@
-import React ,{useState,useEffect} from "react"
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from "react"
+import { Link,Route,useParams } from 'react-router-dom';
 import './index.css';
 import PubSub from 'pubsub-js';
+import Body from '../Body/index'
 
 
 export default function Month_Bar(){
 
-    const[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
+    let[ChooseMonth,setChooseMonth]=useState({year:2017,month:7});
 
     const[nonGo,setnonGo] = useState(true);
+
 
     function handlenext(){  
        setChooseMonth(ChooseMonth=>({
@@ -26,6 +28,7 @@ export default function Month_Bar(){
     }  
 
     useEffect(() => {
+        
         PubSub.publish("choose",ChooseMonth);
         PubSub.subscribe("nonGo",(_,data)=>{
             setnonGo(data);
@@ -36,11 +39,11 @@ export default function Month_Bar(){
     return(
         
         <div className="calendars_tabWrap">
-
+            
             <Link to={`/${ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year}/${ChooseMonth.month-1<1?12:ChooseMonth.month-1}`} onClick={()=>{handleprev()}} className="prev on"></Link>
 
             <ul className="ntb_tab">
-
+ 
                 <li className="tab">
                     <Link to={`/${ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year}/${ChooseMonth.month-1<1?12:ChooseMonth.month-1}`}><span className='' onClick={()=>{handleprev()}}>{ChooseMonth.month-1<1?ChooseMonth.year-1:ChooseMonth.year} {ChooseMonth.month-1<1?12:ChooseMonth.month-1}月</span>
                     </Link>
@@ -63,7 +66,8 @@ export default function Month_Bar(){
             </ul>
 
             <Link to={`/${ChooseMonth.month+1>12?ChooseMonth.year+1:ChooseMonth.year}/${ChooseMonth.month+1>12?1:ChooseMonth.month+1}`} onClick={()=>{handlenext()}} className="next on"></Link>
-            
         </div>
     )
 }
+
+

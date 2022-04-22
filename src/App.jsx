@@ -15,6 +15,6 @@ export default class App extends Component {
           <Body/>
         </BrowserRouter>
       </Fragment>
-    )
+    ) 
   }
 }
