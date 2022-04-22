@@ -1,16 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import './index.css'
 import Data from './Data/index'
-import { Route,Routes,useParams } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import PubSub from 'pubsub-js';
 
 export default function Body_Day() {
     
     const[Choose,setChoose] = useState({year:2017,month:7});
-    
-    
-    
- 
+
     useEffect(()=>{
         PubSub.subscribe("choose",(_,data)=>{ 
             setChoose(data); 
