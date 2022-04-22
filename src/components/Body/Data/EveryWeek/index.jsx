@@ -1,6 +1,6 @@
 
 import React from "react";
-import data1 from '../../json/data1.json';
+import data1 from '../../../../json/data1.json';
 import './index.css'
 import ActionDay from './ActionDay/index'
 import PubSub from 'pubsub-js'

@@ -15,6 +15,7 @@ export default function Body_Day() {
     })
     return (       
         <Routes forceRefresh={true}>
+            <Route exact path="/" element={<Data Choose={Choose}/>}/>
             <Route path={`/:${Choose.year}/:${Choose.month}`} element={<Data Choose={Choose}/>}/>
         </Routes>
   )
