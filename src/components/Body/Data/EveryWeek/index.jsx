@@ -1,9 +1,9 @@
 
-import React from "react";
+import React,{useEffect} from "react";
 import data1 from '../../json/data1.json';
 import './index.css'
 import PubSub from 'pubsub-js'
-
+// PubSub.publish("nonGo",false)
 
 var moment = require('moment');
 
@@ -28,7 +28,6 @@ export default function EveryWeek(props){
                             </td>
                     )}
                     else{   
-                        
                         data1.forEach((obj)=>{
                             if(obj.availableVancancy === undefined){
                                 obj.guaranteed=obj['certain'];
