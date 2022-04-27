@@ -1,15 +1,11 @@
 import React, { Fragment } from 'react'
 import './App.css'
-import MonthBar from './components/Month_Bar/index'
-import Week from './components/Week'
-import Date from './components/Data'
+import BusSelect from './components/BusSelect'
 export default function App(){
 
     return (
           <Fragment>
-              <MonthBar  />
-              <Week/>
-              <Date />
+              <BusSelect  />
           </Fragment>
     )
 }
