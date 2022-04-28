@@ -25,7 +25,7 @@ export default function Bus() {
             <div className='grid'>
                 {   
                     busSeat.seats.map((rowArray, rowIndex) => {
-                        return <Row key={rowIndex} rowArray={rowArray} rowIndex={rowIndex}/>
+                        return <Row key={rowIndex} rowArray={rowArray} />
                     })
                 }
             </div>    

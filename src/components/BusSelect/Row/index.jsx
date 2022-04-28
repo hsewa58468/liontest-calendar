@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import Seat from './Seat'
 export default function Row(props) {
-    const {rowArray,rowIndex}=props
+    const {rowArray}=props
     return (
     <Fragment>
         {
-            rowArray.map((colarray, colIndex) => {
-               return <Seat key={colIndex} Seatarray={colarray} SeatIndex={rowIndex*4+colIndex} style={{gridColumn : 5}}/>
+            rowArray.map((colarray) => {
+               return <Seat key={colarray.idx} Seatarray={colarray} style={{gridColumn : 5}}/>
         })
         }
     </Fragment>

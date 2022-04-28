@@ -1,9 +1,9 @@
 {
     "seats": [
         [
-          { "idx": 0, "type": "driv", "txt": "駕駛", "row": 1, "col": 1 },
-          { "idx": 0, "type": "guid", "txt": "導遊", "row": 1, "col": 2 },
-          { "idx": 0, "type": "aisl", "txt": null, "row": 0, "col": 0 },
+          { "idx": 99, "type": "driv", "txt": "駕駛", "row": 1, "col": 1 },
+          { "idx": 98, "type": "guid", "txt": "導遊", "row": 1, "col": 2 },
+          { "idx": null, "type": "aisl", "txt": null, "row": 0, "col": 0 },
           { "idx": 0, "type": "door", "txt": "前門", "row": 1, "col": 5 }
         ],
         [
@@ -17,19 +17,19 @@
           { "idx": 22, "type": "seat", "txt": "2D", "row":3, "col": 5 }
         ],
         [
-          { "idx": 5, "type": "seat", "txt": "3A",  "row": 4,  "col": 1 },
+          { "idx": 5, "type": "seat", "txt": "3A",  "row": 4,  "col": 1, "status":"selected"},
           { "idx": 6, "type": "seat", "txt": "3B",  "row": 4,  "col": 2 },
           { "idx": 23, "type": "seat", "txt": "3C", "row": 4, "col": 4 },
           { "idx": 24, "type": "seat", "txt": "3D", "row": 4, "col": 5 }
         ],
         [
           { "idx": 7, "type": "seat", "txt": "4A",  "row": 5, "col": 1 },
-          { "idx": 8, "type": "seat", "txt": "4B",  "row": 5, "col": 2 },
+          { "idx": 8, "type": "seat", "txt": "4B",  "row": 5, "col": 2, "status":"selected" },
           { "idx": 25, "type": "seat", "txt": "4C", "row": 5, "col": 4 },
           { "idx": 26, "type": "seat", "txt": "4D", "row": 5, "col": 5 }
         ],
         [
-          { "idx": 9, "type": "seat", "txt": "5A",  "row": 6, "col": 1 },
+          { "idx": 9, "type": "seat", "txt": "5A",  "row": 6, "col": 1, "status":"selected" },
           { "idx": 10, "type": "seat", "txt": "5B", "row": 6, "col": 2 },
           { "idx": 27, "type": "seat", "txt": "5C", "row": 6, "col": 4 },
           { "idx": 28, "type": "seat", "txt": "5D", "row": 6, "col": 5 }
